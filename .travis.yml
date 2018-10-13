@@ -1,10 +1,3 @@
 language: csharp
 solution: src/ReflectionBase.sln
-install:
-  - curl -L -o nuget.exe https://dist.nuget.org/win-x86-commandline/latest/nuget.exe
-  - mono nuget.exe restore src/ReflectionBase.sln
-script:
-  - xbuild /p:Configuration=Release src/ReflectionBase.sln
-  - mono nuget.exe pack ./src/ReflectionBase/ReflectionBase.csproj -Version $MAJOR_VERSION_NUMBER.$MINOR_VERSION_NUMBER.$TRAVIS_BUILD_NUMBER
-  - mono nuget.exe setApiKey $NUGET_API_KEY -Source https://www.nuget.org -Verbosity quiet
-  - mono nuget.exe push src/ReflectionBase.$MAJOR_VERSION_NUMBER.$MINOR_VERSION_NUMBER.$TRAVIS_BUILD_NUMBER.nupkg -Source https://www.nuget.org/api/v2/package  
+
