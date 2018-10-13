@@ -10,11 +10,11 @@ namespace GoodSoil.xUnit.ReflectionBase
     {
         #region Accessing the SUT as dynamic
         /// <summary>Supply the full name of your class as "Namespace.ClassName"</summary>
-        protected string FullyQualifiedClassName { get { return typeof(TSUT).FullName; } }
+        protected virtual string FullyQualifiedClassName { get { return typeof(TSUT).FullName; } }
         /// <summary>Supply the name of your project assembly (the .dll name)</summary>
-        protected string AssemblyName { get { return typeof(TSUT).Assembly.FullName; } }
+        protected virtual string AssemblyName { get { return typeof(TSUT).Assembly.FullName; } }
         /// <summary>The assembly qualified name of the class being tested</summary>
-        protected string TypeName { get { return FullyQualifiedClassName + "," + AssemblyName; } }
+        protected virtual string TypeName { get { return FullyQualifiedClassName + "," + AssemblyName; } }
         /// <summary>Situation Under Test (SUT) Data Type</summary>
         protected Type SUT_Type { get { return Type.GetType(TypeName, true); } }
         /// <summary>New instance of the Situation Under Test (SUT)</summary>
